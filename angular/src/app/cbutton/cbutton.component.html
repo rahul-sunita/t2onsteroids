@@ -1,0 +1,13 @@
+<div #MyButton class="mouseover" (click)="TriggerAction($event)" [ngStyle]="{'font-size': this.Size + 'px'}">
+  <div class="back" [ngStyle]="{'width': widthBox + 'px', 'height': this.Size*2 + 'px'}">
+    <img src="../../assets/XSHM.gif" class="backimg selected" [ngStyle]="{'left': widthBox/2 + 'px'}">
+  </div>
+  <div class="innerContent" [ngStyle]="{'top': -1*this.Size + 'px'}">
+    <div class="str">{{displayText}}<div [ngClass]="IsMenuOpen ? 'triangaldwn' : 'triangalup'" *ngIf="Choices"></div></div>
+  </div>
+  <div #MyMenu class="Menu" [hidden]="!IsMenuOpen" [ngStyle]="{'width': widthBox + 'px'}">
+    <ul>
+      <li *ngFor="let Choice of Choices">{{Choice}}</li>
+    </ul>
+  </div>
+</div>
